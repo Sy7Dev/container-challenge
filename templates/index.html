@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Flask + Redis | Docker Project</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <header class="navbar">
+        <div class="nav-container">
+
+            <div class="brand">
+                <div class="brand-icon">🐳</div>
+                <div>
+                    <strong>Container Challenge</strong>
+                    <span>Flask + Redis</span>
+                </div>
+            </div>
+
+            <div class="status">
+                <span class="status-dot"></span>
+                System Online
+            </div>
+
+        </div>
+    </header>
+
+
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <div class="badge">
+                    DOCKER • FLASK • REDIS • NGINX
+                </div>
+
+                <h1>
+                    A Multi-Container
+                    <span>Web Application</span>
+                </h1>
+
+                <p class="hero-description">
+                    A containerised Flask application using Redis for
+                    persistent data storage, with Docker Compose managing
+                    the services behind the scenes.
+                </p>
+
+                <div class="hero-buttons">
+
+                    <a href="/count" class="primary-button">
+                        View Visit Counter
+                        <span>→</span>
+                    </a>
+
+                    <a href="#how-it-works" class="secondary-button">
+                        How it works
+                    </a>
+
+                </div>
+
+            </div>
+
+            <div class="hero-graphic">
+
+                <div class="graphic-card">
+
+                    <div class="docker-symbol">
+                        🐳
+                    </div>
+
+                    <div class="connection-line"></div>
+
+                    <div class="redis-symbol">
+                        <img src="{{ url_for('static', filename='redis.webp') }}" alt="Redis logo">
+                    </div>
+
+                </div>
+
+                <p>
+                    Containers working together
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- Architecture -->
+        <section id="how-it-works" class="section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    ARCHITECTURE
+                </span>
+
+                <h2>How it works</h2>
+
+                <p>
+                    Each part of the application has a specific job.
+                    Docker Compose connects everything together.
+                </p>
+
+            </div>
+
+
+            <div class="architecture">
+
+                <div class="architecture-card">
+
+                    <div class="card-icon">🌐</div>
+
+                    <h3>Browser</h3>
+
+                    <p>
+                        Sends requests to the application through
+                        the public port.
+                    </p>
+
+                    <span class="port">
+                        localhost:5003
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">→</div>
+
+
+                <div class="architecture-card featured">
+
+                    <div class="card-icon">🐍</div>
+
+                    <h3>Flask</h3>
+
+                    <p>
+                        Handles web requests and communicates with
+                        the Redis database.
+                    </p>
+
+                    <span class="port">
+                        web:5003
+                    </span>
+
+                </div>
+
+
+                <div class="arrow">→</div>
+
+
+                <div class="architecture-card">
+
+                    <div class="card-icon">🔴</div>
+
+                    <h3>Redis</h3>
+
+                    <p>
+                        Stores the visit counter so the application
+                        can keep track of requests.
+                    </p>
+
+                    <span class="port">
+                        redis:6379
+                    </span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Explanation -->
+        <section class="section explanation">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    UNDER THE HOOD
+                </span>
+
+                <h2>What's actually happening?</h2>
+
+            </div>
+
+
+            <div class="steps">
+
+                <div class="step">
+
+                    <div class="step-number">01</div>
+
+                    <div>
+                        <h3>The browser makes a request</h3>
+
+                        <p>
+                            When you visit
+                            <strong>localhost:5003</strong>,
+                            the request is sent to the application.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">02</div>
+
+                    <div>
+                        <h3>Flask handles the request</h3>
+
+                        <p>
+                            Flask runs inside its own Docker container
+                            and decides what response should be returned.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">03</div>
+
+                    <div>
+                        <h3>Redis stores the counter</h3>
+
+                        <p>
+                            Visiting <strong>/count</strong> tells Flask
+                            to increment the <strong>visits</strong> value
+                            stored in Redis.
+                        </p>
+                    </div>
+
+                </div>
+
+
+                <div class="step">
+
+                    <div class="step-number">04</div>
+
+                    <div>
+                        <h3>Docker Compose connects everything</h3>
+
+                        <p>
+                            Compose creates the network between the
+                            containers, allowing Flask to communicate
+                            with Redis using its service name.
+                        </p>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Technology cards -->
+        <section class="section">
+
+            <div class="section-heading">
+
+                <span class="section-label">
+                    TECHNOLOGY STACK
+                </span>
+
+                <h2>What's running?</h2>
+
+            </div>
+
+
+            <div class="tech-grid">
+
+                <div class="tech-card">
+                    <span class="tech-icon">🐳</span>
+
+                    <div>
+                        <h3>Docker</h3>
+                        <p>
+                            Packages the application and its
+                            dependencies into containers.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="tech-card">
+                    <span class="tech-icon">🐍</span>
+
+                    <div>
+                        <h3>Flask</h3>
+                        <p>
+                            Lightweight Python framework handling
+                            the web application.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="tech-card">
+                    <span class="tech-icon">🔴</span>
+
+                    <div>
+                        <h3>Redis</h3>
+                        <p>
+                            Fast key-value database storing the
+                            application's visit counter.
+                        </p>
+                    </div>
+                </div>
+
+
+                <div class="tech-card">
+                    <span class="tech-icon">⚖️</span>
+
+                    <div>
+                        <h3>Nginx</h3>
+                        <p>
+                            Sits in front of the Flask containers
+                            and handles incoming traffic.
+                        </p>
+                    </div>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Counter -->
+        {% if visit_count is defined %}
+
+        <section class="counter-section">
+
+            <span class="section-label">
+                REDIS DATA
+            </span>
+
+            <h2>Visit Counter</h2>
+
+            <div class="counter">
+                {{ visit_count }}
+            </div>
+
+            <p>
+                This number was retrieved from Redis.
+            </p>
+
+            <a href="/count" class="primary-button">
+                Increment Counter →
+            </a>
+
+        </section>
+
+        {% endif %}
+
+    </main>
+
+
+    <footer>
+
+        <p>
+            Built with
+            <strong>Python</strong>,
+            <strong>Flask</strong>,
+            <strong>Redis</strong>
+            &amp;
+            <strong>Docker</strong>.
+        </p>
+
+        <p class="footer-small">
+            Multi-container application challenge
+        </p>
+
+    </footer>
+
+</body>
+</html>
