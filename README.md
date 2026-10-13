@@ -57,7 +57,7 @@ The Flask application handles web requests, Redis stores the visit counter, and 
 
 ---
 
-## 🛠️ Technology Stack
+##  Technology Stack
 
 | Technology     | Purpose                        |
 | -------------- | ------------------------------ |
@@ -70,7 +70,7 @@ The Flask application handles web requests, Redis stores the visit counter, and 
 
 ---
 
-## 📂 Project Structure
+##  Project Structure
 
 ```text
 container-challenge/
@@ -132,7 +132,7 @@ Docker Compose creates the network connecting the containers and provides the Re
 
 ---
 
-## 🔐 Environment Variables
+##  Environment Variables
 
 Flask reads the Redis connection information from environment variables:
 
@@ -153,7 +153,7 @@ This means the application doesn't have to hard-code the Redis connection detail
 
 ---
 
-## 💾 Persistent Redis Storage
+##  Persistent Redis Storage
 
 Redis uses a named Docker volume:
 
@@ -258,6 +258,6 @@ Key concepts covered:
 
 ---
 
-## 👨‍💻 Project
+##  Project
 
 Built as a hands-on containerisation project using Flask, Redis and Docker.
