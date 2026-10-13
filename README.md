@@ -1,4 +1,4 @@
-# 🐳 Multi-Container Flask + Redis Application
+#  Multi-Container Flask + Redis Application
 
 A containerised web application built with **Python, Flask, Redis, Docker Compose and Nginx**.
 
@@ -8,7 +8,7 @@ This project was created as part of a multi-container application challenge and 
 
 ---
 
-## 🚀 Overview
+##  Overview
 
 This application consists of several containers working together:
 
@@ -42,7 +42,7 @@ The Flask application handles web requests, Redis stores the visit counter, and 
 
 ---
 
-## ✨ Features
+##  Features
 
 * Flask web application
 * Redis visit counter
@@ -96,7 +96,7 @@ container-challenge/
 
 ---
 
-## ⚙️ How It Works
+##  How It Works
 
 ### 1. Browser
 
@@ -172,7 +172,7 @@ docker compose down -v
 
 ---
 
-## ▶️ Running the Application
+##  Running the Application
 
 Clone the repository:
 
@@ -212,7 +212,7 @@ http://localhost:5003/count
 
 ---
 
-## 🛑 Stopping the Application
+##  Stopping the Application
 
 Press:
 
@@ -240,7 +240,7 @@ docker compose down
 
 ---
 
-## 🎯 What I Learned
+##  What I Learned
 
 This project helped me understand how multiple containerised services communicate with each other.
 
